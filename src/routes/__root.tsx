@@ -7,7 +7,7 @@ export const Route = new RootRoute({
 
 function RootComponent() {
   return (
-    <main className="w-screen">
+    <main>
       <Header />
       <hr />
       <div className="container px-4 md:px-6">
