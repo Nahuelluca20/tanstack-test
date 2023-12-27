@@ -7,7 +7,7 @@ export const Route = new RootRoute({
 function RootComponent() {
   return (
     <main className="w-screen">
-      <div className="p-2 flex gap-2 text-lg ">
+      <div className="p-2 flex gap-2 text-lg">
         <Link
           to="/"
           activeProps={{
@@ -27,7 +27,9 @@ function RootComponent() {
         </Link>
       </div>
       <hr />
-      <Outlet />
+      <div className="px-5 py-5 md:mx-20 md:py-20">
+        <Outlet />
+      </div>
     </main>
   );
 }

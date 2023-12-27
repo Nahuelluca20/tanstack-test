@@ -11,7 +11,7 @@ declare module "@tanstack/react-router" {
     "/characters": {
       parentRoute: typeof rootRoute;
     };
-    "/characters_/$slug": {
+    "/characters_/$id": {
       parentRoute: typeof rootRoute;
     };
   }
@@ -28,7 +28,7 @@ Object.assign(CharactersRoute.options, {
 });
 
 Object.assign(CharactersSlugRoute.options, {
-  path: "/characters/$slug",
+  path: "/characters/$id",
   getParentRoute: () => rootRoute,
 });
 
