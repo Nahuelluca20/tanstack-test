@@ -1,11 +1,6 @@
-import { FileRoute, Link } from "@tanstack/react-router";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardDescription,
-} from "../components/ui/card";
+import { FileRoute } from "@tanstack/react-router";
+
+import CharacterCard from "../components/character-card";
 
 export const Route = new FileRoute("/characters").createRoute({
   component: CharactersRoute,
@@ -44,32 +39,14 @@ export default function CharactersRoute() {
         Meet the characters that make TanStack so special.
       </p>
       <div className="grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-        <Card>
-          <CardHeader>
-            <Link href="#">
-              <CardTitle>Character 1</CardTitle>
-            </Link>
-            <div>Subtitle for Character 1</div>
-          </CardHeader>
-          <CardContent>
-            <CardDescription>Description for Character 1</CardDescription>
-          </CardContent>
-        </Card>
-      </div>
-      <ul>
         {characters.map((character) => (
-          <li key={character.id}>
-            <Link
-              to="/characters/$id"
-              params={{
-                id: character.id,
-              }}
-            >
-              {character.name}
-            </Link>
-          </li>
+          <CharacterCard
+            id={character.id}
+            name={character.name}
+            key={`pokemon-${character.id}`}
+          />
         ))}
-      </ul>
+      </div>
     </section>
   );
 }

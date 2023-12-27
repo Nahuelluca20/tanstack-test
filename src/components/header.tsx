@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { SquareStackIcon } from "lucide-react";
+import ModeToggle from "./mode-toggle";
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
         <SquareStackIcon className="h-6 w-6" />
         <span className="sr-only">TanStack</span>
       </Link>
-      <nav className="ml-auto flex gap-4 sm:gap-6">
+      <nav className="ml-auto items-center flex gap-4 sm:gap-6">
         <Link
           className="text-sm font-medium hover:underline underline-offset-4"
           to="/"
@@ -27,6 +28,9 @@ export default function Header() {
         >
           Search
         </Link>
+        <div className="h-4 w-4">
+          <ModeToggle />
+        </div>
       </nav>
     </header>
   );
