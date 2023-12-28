@@ -9,7 +9,11 @@ import {
 } from "./ui/card";
 import { Input } from "./ui/input";
 
-export default function SearchCard() {
+export default function SearchCard({
+  setPokemonSearch,
+}: {
+  setPokemonSearch: (value: string) => void;
+}) {
   return (
     <Card className="w-full max-w-md">
       <CardHeader>
@@ -23,6 +27,7 @@ export default function SearchCard() {
           <Input
             className="flex-grow"
             placeholder="Search for a Pokémon"
+            onChange={(e) => setPokemonSearch(e.target.value)}
             type="text"
           />
           <Button type="submit">
